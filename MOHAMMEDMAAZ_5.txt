@@ -1,0 +1,13 @@
+from itertools import combinations
+def user_fun(user_sent,user_words):
+    ret_list = []
+    for i in user_sent:
+        count = i.count("{}")
+        list_words = list(combinations(user_words,count))
+        for j in list_words:
+            ret_list.append(i.format(*j))
+    return ret_list
+
+user_sent = ["how far is {} from {}","how far is {}"]
+user_words = ["kolkata","mumbai"]
+print(user_fun(user_sent,user_words))

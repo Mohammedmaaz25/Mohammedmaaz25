@@ -1,0 +1,52 @@
+def check_len(user_str):
+    if len(user_str) > 16 or len(user_str) < 6:
+        return False
+    elif len(user_str) >= 6 and len(user_str) <= 16:
+        return True
+def check_lower(user_str):
+    check = 0
+    for i in user_str:
+        if ord(i) >= 97 and ord(i) <= 122:
+            check+=1
+    if check == 0:
+        return False
+    else:
+        return True
+def check_upper(user_str):
+    check = 0
+    for i in user_str:
+        if ord(i) >= 65 and ord(i) <= 90:
+            check+=1
+    if check == 0:
+        return False
+    else:
+        return True
+def check_num(user_str):
+    check = 0
+    for i in user_str:
+        if ord(i) >= 48 and ord(i) <= 57:
+            check+=1
+    if check == 0:
+        return False
+    else:
+        return True
+def check_special(user_str):
+    check = 0
+    for i in user_str:
+        if i in "!@#$%^&*()_+\",.<>-;:/\{|}`~]['?":
+            check+=1
+    if check == 0:
+        return False
+    else:
+        return True            
+
+def check_pass(user_str):
+    check_main = 0
+    if check_len(user_str) and check_lower(user_str) and check_num(user_str) and check_special(user_str) and check_upper(user_str):
+        return "Valid pass"
+    else:
+        return "Invalid Pass"
+
+user_str = "Musaddik@"
+print(check_pass(user_str))
+    

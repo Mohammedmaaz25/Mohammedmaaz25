@@ -1,0 +1,9 @@
+def remove_dupli(dict_list):
+    ret_list = []
+    for i in dict_list:
+        if i not in ret_list:
+            ret_list.append(i)
+    return ret_list
+
+dict_list = [{"hello":12},{"hello":13},{"hello":12}]
+print(remove_dupli(dict_list))
